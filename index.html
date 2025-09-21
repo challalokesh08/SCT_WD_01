@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Colorful Interactive Navigation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Fira+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Montserrat', sans-serif; }
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: #006d77;        /* Deep teal */
+      color: #fff;
+      z-index: 1100; height: 60px;
+      transition: background 0.3s, color 0.3s, font-family 0.3s;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    }
+    nav.scrolled {
+      background: #caff70;        /* Yellow-green */
+      color: #073b4c;             /* Deep blue */
+      font-family: 'Fira Mono', monospace;
+      font-style: italic;
+      box-shadow: 0 5px 14px rgba(7,59,76,0.15);
+    }
+    nav ul {
+      display: flex; gap: 40px; list-style: none; margin: 0; padding: 0;
+    }
+    nav a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.10em;
+      border-radius: 7px;
+      padding: 9px 16px;
+      transition: color 0.18s, background 0.18s, font-size 0.16s, letter-spacing 0.16s, font-style 0.18s;
+    }
+    nav a:hover {
+      color: black;         /* Soft yellow */
+      background: white;    /* Bright crimson */
+      font-style: italic;
+      font-size: 1.17em;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+    }
+    body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #006d77;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/5ba10554-9010-4fe1-9598-9e10fa986457.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
+  background-position: center;
+}
+
+.content {
+  margin-top: 80px;
+  padding: 28px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+}
+
+    .content { margin-top: 80px; padding: 28px; }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="content">
+    <h2>Colorful Scroll & Hover Menu</h2>
+    <p>Try scrolling down or hovering navigation items for live color changes!</p>
+    <div style="height:1100px"></div>
+  </div>
+  <script>
+    // Toggle nav style on scroll
+    window.addEventListener("scroll", function() {
+      const nav = document.getElementById("navbar");
+      nav.classList.toggle("scrolled", window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>
